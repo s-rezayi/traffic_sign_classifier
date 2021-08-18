@@ -20,14 +20,14 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./sign.png "Visualization"
-[image2]: ./training_data.png "Training Data Distribution"
-[image3]: ./validation_data.png "Validation Data Distribution"
-[image4]: ./testing_data.png "Test Data Distribution"
-[image5]: ./test_new_images/originalg/bumpy.jpg "Traffic Sign 1"
-[image6]: ./test_new_images/originalg/general_caution.jpg "Traffic Sign 2"
-[image7]: ./test_new_images/originalg/slippery.jpg "Traffic Sign 3"
-[image8]: ./test_new_images/originalg/wild_animal.jpg "Traffic Sign 4"
-[image9]: ./test_new_images/originalg/work.jpg "Traffic Sign 5"
+[image2]: ./training_data.jpg "Training Data Distribution"
+[image3]: ./validation_data.jpg "Validation Data Distribution"
+[image4]: ./testing_data.jpg "Test Data Distribution"
+[image5]: ./test_new_images/original/bumpy.jpg "Traffic Sign 1"
+[image6]: ./test_new_images/original/general_caution.jpg "Traffic Sign 2"
+[image7]: ./test_new_images/original/slippery.jpg "Traffic Sign 3"
+[image8]: ./test_new_images/original/wild_animal.jpg "Traffic Sign 4"
+[image9]: ./test_new_images/original/work.jpg "Traffic Sign 5"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -79,34 +79,34 @@ My final model consisted of the following layers with total of 64,811 parameters
 
 Model: "sequential"
 _________________________________________________________________
-Layer (type)                 Output Shape              Param #   
+Layer (type)                 | Output Shape             | Param #   
 =================================================================
-Input			             (None, 32, 32, 3)         0       
+Input			             | (None, 32, 32, 3)        | 0       
 _________________________________________________________________
-conv2d (Conv2D)              (None, 28, 28, 6)         456       
+conv2d (Conv2D)              | (None, 28, 28, 6)        | 456       
 _________________________________________________________________
-max_pooling2d (MaxPooling2D) (None, 14, 14, 6)         0         
+max_pooling2d (MaxPooling2D) | (None, 14, 14, 6)        | 0         
 _________________________________________________________________
-activation (Activation)      (None, 14, 14, 6)         0         
+activation (Activation)      | (None, 14, 14, 6)        | 0         
 _________________________________________________________________
-dropout (Dropout)            (None, 14, 14, 6)         0         
+dropout (Dropout)            | (None, 14, 14, 6)        | 0         
 _________________________________________________________________
-conv2d_1 (Conv2D)            (None, 10, 10, 16)        2416      
+conv2d_1 (Conv2D)            | (None, 10, 10, 16)       | 2416      
 _________________________________________________________________
-max_pooling2d_1 (MaxPooling2 (None, 5, 5, 16)          0         
+max_pooling2d_1 (MaxPooling2 | (None, 5, 5, 16)         | 0         
 _________________________________________________________________
-activation_1 (Activation)    (None, 5, 5, 16)          0         
+activation_1 (Activation)    | (None, 5, 5, 16)         | 0         
 _________________________________________________________________
-dropout_1 (Dropout)          (None, 5, 5, 16)          0         
+dropout_1 (Dropout)          | (None, 5, 5, 16)         | 0         
 _________________________________________________________________
-flatten (Flatten)            (None, 400)               0         
+flatten (Flatten)            | (None, 400)              | 0         
 _________________________________________________________________
-dense (Dense)                (None, 120)               48120     
+dense (Dense)                | (None, 120)              | 48120     
 _________________________________________________________________
-dense_1 (Dense)              (None, 84)                10164     
+dense_1 (Dense)              | (None, 84)               | 10164     
 _________________________________________________________________
-dense_2 (Dense)              (None, 43)                3655      
-=================================================================
+dense_2 (Dense)              | (None, 43)               | 3655      
+_________________________________________________________________
 Total params: 64,811
 Trainable params: 64,811
 Non-trainable params: 0
@@ -161,7 +161,7 @@ The model was able to correctly guess 1 of the 5 traffic signs, which gives an a
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The code for making predictions on my final model is located in the second to last part of the Ipython notebook.
 
 For the second image, the model is relatively sure that this is a Pedestrians sign (probability of .85), and the image does contain a Bumpy Road sign. The top five soft max probabilities were:
 
